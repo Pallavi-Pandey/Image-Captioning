@@ -164,14 +164,14 @@ function App() {
                                 <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>or click to browse</p>
                             </div>
                         )}
-                        <input
-                            type="file"
-                            ref={fileInputRef}
-                            accept="image/*"
-                            onChange={handleImageChange}
-                            hidden
-                        />
                     </div>
+                    <input
+                        type="file"
+                        ref={fileInputRef}
+                        accept="image/*"
+                        onChange={handleImageChange}
+                        style={{ display: 'none' }}
+                    />
 
                     <div className="button-group">
                         <button
