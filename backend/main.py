@@ -4,6 +4,7 @@ from typing import Optional
 
 import torch
 from fastapi import FastAPI, UploadFile, File, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from PIL import Image
 from transformers import BlipProcessor, BlipForConditionalGeneration
@@ -12,6 +13,15 @@ import base64
 
 # Initialize FastAPI app
 app = FastAPI(title="AI Image Captioning Service")
+
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # In production, specify the frontend URL
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Load BLIP model and processor
 # Using base model for balance between performance and speed
