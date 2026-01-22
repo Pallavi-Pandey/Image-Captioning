@@ -32,8 +32,8 @@ An accessible, AI-driven system that generates natural language descriptions for
    ```
 
 3. **Access the App:**
-   - Frontend: `http://localhost:3000`
-   - Backend API Docs: `http://localhost:8000/docs`
+   - Frontend: `http://localhost:3001`
+   - Backend API Docs: `http://localhost:8001/docs`
 
 ## 🧠 Model Explanation
 We chose the **BLIP** model (`Salesforce/blip-image-captioning-base`) because it outperforms traditional CNN+LSTM architectures by leveraging:

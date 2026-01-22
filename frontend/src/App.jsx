@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 import { Upload, Camera, Volume2, Loader2, Sparkles, Image as ImageIcon } from 'lucide-react';
 
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL = 'http://localhost:8001';
 
 function App() {
     const [selectedImage, setSelectedImage] = useState(null);
