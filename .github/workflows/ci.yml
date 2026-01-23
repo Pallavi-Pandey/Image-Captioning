@@ -1,0 +1,53 @@
+name: AI Vision CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  backend-test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+        
+    - name: Install uv
+      run: curl -LsSf https://astral.sh/uv/install.sh | sh
+      
+    - name: Install dependencies
+      run: |
+        cd backend
+        # Using uv for fast installation
+        ~/.cargo/bin/uv pip install --system -r requirements.txt
+        ~/.cargo/bin/uv pip install --system pytest httpx
+        
+    - name: Run Tests
+      run: |
+        cd backend
+        pytest test_main.py
+
+  frontend-build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        
+    - name: Install Dependencies
+      run: |
+        cd frontend
+        npm install
+        
+    - name: Build Frontend
+      run: |
+        cd frontend
+        npm run build

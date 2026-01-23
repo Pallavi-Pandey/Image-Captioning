@@ -7,3 +7,5 @@ pillow
 gTTS
 python-multipart
 python-dotenv
+pytest
+httpx

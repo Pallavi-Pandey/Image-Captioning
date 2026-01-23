@@ -144,7 +144,10 @@ function App() {
 
             <div className="app-container">
                 <header>
-                    <h1>AI VISION</h1>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', marginBottom: '0.5rem' }}>
+                        <img src="/src/assets/logo.png" alt="AI Vision Logo" style={{ width: '60px', height: '60px', objectFit: 'contain' }} />
+                        <h1 style={{ marginBottom: 0 }}>AI VISION</h1>
+                    </div>
                     <p className="subtitle">Lending sight through intelligent scene understanding and spoken descriptions.</p>
                 </header>
 
