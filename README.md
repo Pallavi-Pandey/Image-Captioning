@@ -40,6 +40,7 @@ We chose the **BLIP** model (`Salesforce/blip-image-captioning-base`) because it
 1. **Multimodal Alignment**: It understands the relationship between visual features and linguistic tokens more deeply.
 2. **Beam Search**: We use beam search (width=5) during inference to generate more coherent and descriptive sentences than a simple greedy approach.
 
+
 ## Offline Fallback Design
 For users in remote areas, the system is designed to fallback to a lightweight client-side model:
 - **Client Processing**: Use ONNX Runtime in the browser to run a quantized MobileNet encoder.
