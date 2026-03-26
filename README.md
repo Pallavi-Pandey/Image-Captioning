@@ -1,4 +1,4 @@
-# AI-Powered Image Captioning for the Visually Impaired
+# Image Captioning Ai
 
 An accessible, AI-driven system that generates natural language descriptions for images and converts them to speech to assist visually impaired users.
 
